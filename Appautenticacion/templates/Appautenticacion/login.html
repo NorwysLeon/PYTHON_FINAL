@@ -1,9 +1,9 @@
-{% extends "Padre.html" %}
+{% extends "Appblog/Padre.html" %}
 {% load static %}
 
 {% block Titulos_iniciales %}
 <span class="site-heading-upper text-primary mb-3"></span>
-<span class="site-heading-lower">EDITANDO POST  </span>
+<span class="site-heading-lower">FORMULARIO DE INGRESO</span>
 {% endblock %}
 
 {% block imagen %}
@@ -13,13 +13,13 @@
 <h3>{{  mensaje }}</h3>
 {% block Titulos_texto %}
 <h6 class="section-heading mb-4">
-    <form action="{% url 'editarBlog' blog.id %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
 
        <table>
             {{ form.as_table }}
            
        </table>
-        <input type="submit" value="Guardar Cambios ">
+        <input type="submit" value="Ingresar">
     </form>
 
  </h6>

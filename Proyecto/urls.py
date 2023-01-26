@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Appblog.views import *
+from Appautenticacion.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio),
     path('Appblog/', include("Appblog.urls")),
-    #path('AppBlog/', include("AppMensajeria.urls")),
+    path('Appautenticacion/', include("Appautenticacion.urls")),
     path('ckeditor/', include('ckeditor_uploader.urls')),
   
 ]

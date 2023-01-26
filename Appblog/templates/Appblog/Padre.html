@@ -37,7 +37,7 @@
                                                
                         
                                                 
-                        {% if user.is_authenticated %}
+                        
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'blogFormulario' %}">CREAR POST</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'busquedaTitulo' %}">BUSCAR POST</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'blog_list' %}">BLOGS</a></li>
@@ -46,11 +46,10 @@
                         
                                            
 
-                        {% else  %}
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">REGISTRO</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">ACCESO</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'acceso' %}">REGISTRO</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'login' %}">ACCESO</a></li>
                         
-                        {% endif %}  
+                       
                                         
                     </ul>
                 </div>

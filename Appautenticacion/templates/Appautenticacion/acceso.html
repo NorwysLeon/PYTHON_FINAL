@@ -1,31 +1,32 @@
-{% extends "Padre.html" %}
+{% extends "Appblog/Padre.html" %}
 {% load static %}
 
 {% block Titulos_iniciales %}
 <span class="site-heading-upper text-primary mb-3"></span>
-<span class="site-heading-lower">FORMULARIO PARA CREAR POST</span>
+<span class="site-heading-lower">FORMULARIO DE ACCESO - NUEVOS USUARIOS</span>
 {% endblock %}
+
 
 {% block imagen %}
     <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'assets/img/registro.jpg' %}" alt="..." />
 {% endblock %}
 
 
-
 <h3>{{  mensaje }}</h3>
-{% block Titulos_texto %}
 
-<form action="{% url 'blogFormulario' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+{% block Titulos_texto %}
+<h6 class="section-heading mb-4">
+
+    <form action="{% url 'register' %}" method="POST"> {% csrf_token %}
 
        <table>
-        {{ form.as_table }}
-
+            {{ form.as_table }}
+           
        </table>
-
-        <input type="submit" value="Crear Post">
+        <input type="submit" value="Crear Usuario Nuevo">
     </form>
 
-
+ </h6>
 {% endblock %}
 
 

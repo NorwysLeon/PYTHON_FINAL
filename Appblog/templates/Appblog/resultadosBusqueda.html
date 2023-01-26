@@ -1,9 +1,9 @@
-{% extends "Padre.html" %}
+{% extends "Appblog/Padre.html" %}
 {% load static %}
 
 {% block Titulos_iniciales %}
 <span class="site-heading-upper text-primary mb-3"></span>
-<span class="site-heading-lower">LISTADO DE BLOGS</span>
+<span class="site-heading-lower">RESULTADOS DE LA BUSQUEDA</span>
 {% endblock %}
 
 {% block imagen %}
@@ -13,24 +13,23 @@
 <h3>{{  mensaje }}</h3>
 {% block Titulos_texto %}
 <h6 class="section-heading mb-4">
-   <ul>
-    <h1>LISTADO DE BLOGS</h1>
 
-    {% for blog in object_list %}
-    <li>
-        <p> TITULO : <i>{{ blog.titulo }}</i></p>
-        
-        <p> 
-            <a href="{% url 'leerBlogs' %}">Leer mas</a>
+{% if blogs %}
 
-    </li>
+<h2>LISTADO DE BLOG</h2>
+{% for blog in blogs %}
 
-  
-    
-    {% endfor %}
-    </ul>
-   
-   
+<h3>{{ blog.titulo }} - 
+   - {{ blog.fecha }}</h3>
+
+{% endfor %}
+
+{% else %}
+
+<h2>NO HAY BLOG QUE COINCIDA CON SU BUSQUEDA</h2>
+
+{% endif %}
+
  </h6>
 {% endblock %}
 
