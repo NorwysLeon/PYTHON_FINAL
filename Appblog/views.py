@@ -88,3 +88,7 @@ def editarBlog(request, id):
         return render (request, "editarBlog.html", {"form": formulario, "blog": blog})
 
 
+#Permite listar todos los blogs de la BD, con información mínima de dicho blog.
+class BlogList(LoginRequiredMixin, ListView):
+    model=Blog
+    template_name= "blogs.html"

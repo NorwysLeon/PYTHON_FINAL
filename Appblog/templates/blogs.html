@@ -8,30 +8,31 @@
 
 {% block imagen %}
     <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'assets/img/registro.jpg' %}" alt="..." />
-{% endblock %} 
+{% endblock %}
 
-
-
+<h3>{{  mensaje }}</h3>
 {% block Titulos_texto %}
 <h6 class="section-heading mb-4">
    <ul>
     <h1>LISTADO DE BLOGS</h1>
-    {% for blog in blogs %}
-    <li> {{ blog.titulo }} - {{ blog.subtitulo }} - 
-        {{ blog.cuerpo }} - {{ blog.autor }} - 
-        {{ blog.fecha }} - {{ blog.imagen }}
+
+    {% for blog in object_list %}
+    <li>
+        <p> TITULO : <i>{{ blog.titulo }}</i></p>
+        
+        <p> 
+            <a href="{% url 'leerBlogs' %}">Leer mas</a>
 
     </li>
 
-    <a class="btn btn-danger" href="{% url 'eliminarBlog'  blog.id  %}">Eliminar </a>
-    <a class="btn btn-success" href="{% url 'editarBlog'  blog.id  %}">Editar</a>
+  
+    
     {% endfor %}
     </ul>
-    <h2>{{ mensaje }}</h2>
-    <a class="btn btn-primary" href="{% url 'blogFormulario'  %}">Agregar Post</a>
+   
+   
  </h6>
 {% endblock %}
-
 
 
 {% block Autor_fecha %}

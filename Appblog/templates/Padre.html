@@ -34,20 +34,17 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'inicio' %}">HOGAR</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'acercademi' %}">ACERCA DE MI</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">BLOGS</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">MODIFICAR BLOGS</a></li>
+                                               
                         
-                        
-                        
+                                                
                         {% if user.is_authenticated %}
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'blogFormulario' %}">CREAR POST</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'busquedaTitulo' %}">BUSCAR POST</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'leerBlogs' %}">POST</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'blog_list' %}">BLOGS</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">CERRAR SESIÓN</a></li>
                         
                         
-                    
-                        
+                                           
 
                         {% else  %}
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">REGISTRO</a></li>

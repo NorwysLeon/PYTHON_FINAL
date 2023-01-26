@@ -16,7 +16,7 @@ urlpatterns = [
     path('eliminarBlog/<id>', eliminarBlog, name="eliminarBlog"),
     path('editarBlog/<id>', editarBlog, name="editarBlog"),
 
-    #path('blog/list/', BlogList.as_view(), name="blog_list"),
+    path('blog/list/', BlogList.as_view(), name="blog_list"),
     #path('blog/<pk>', BlogDetalle.as_view(), name="blog_detalle"),
 
     #path('register/', register, name="register"),
