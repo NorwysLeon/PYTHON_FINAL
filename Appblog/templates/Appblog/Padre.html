@@ -35,21 +35,22 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'inicio' %}">HOGAR</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'acercademi' %}">ACERCA DE MI</a></li>
                                                
-                        
+                        {% if user.is_authenticated %}
                                                 
                         
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'blogFormulario' %}">CREAR POST</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'busquedaTitulo' %}">BUSCAR POST</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'blog_list' %}">BLOGS</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">CERRAR SESIÓN</a></li>
+                        <p>Bienvenido: {{ user.username }}</p>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'logout' %}">CERRAR SESIÓN</a></li>
                         
                         
-                                           
-
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'acceso' %}">REGISTRO</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'login' %}">ACCESO</a></li>
+                        {% else %} 
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'login' %}">ACCESO</a></li>          
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'registro' %}">REGISTRO</a></li>
                         
-                       
+                        
+                        {% endif %}
                                         
                     </ul>
                 </div>

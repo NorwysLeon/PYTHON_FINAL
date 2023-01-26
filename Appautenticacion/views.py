@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import *
-from .forms import *
 
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
@@ -36,15 +35,3 @@ def login_usuario(request):
 
 
 
-def acceso(request):
-    if request.method=="POST":
-        form=RegistroUsuarioForm(request.POST)
-        if form.is_valid():
-            username=form.cleaned_data.get("username")
-            form.save()
-            return render(request, "Appblog/inicio.html", {"mensaje": f"Usuario {username} fue creado exitosamente.!"})      
-        else:
-            return render(request, "Apprautenticacion/acceso.html", {"form": form, "mensaje": "ERROR AL CREAR USUARIO!"})  
-    else:
-        form=RegistroUsuarioForm()
-        return render(request, "Apprautenticacion/acceso.html", {"form":form})

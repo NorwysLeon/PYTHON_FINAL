@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import *
 from django.http import HttpResponse
 
-from Appblog.form import *
+from Appblog.forms import *
 
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -19,6 +19,7 @@ def inicio(request):
 def acercademi(request):
     return render (request, "Appblog/acercademi.html")
 
+@login_required
 def blogFormulario(request):
     if request.method=="POST":
         form=BlogForm(request.POST, request.FILES)
@@ -41,11 +42,11 @@ def blogFormulario(request):
         return render(request, "Appblog/blogFormulario.html", {"form": formulario, "mensaje": "Información no valida"})
 
 
-
+@login_required
 def busquedaTitulo(request):
     return render(request, "Appblog/busquedaTitulo.html")
 
-
+@login_required
 def buscar(request):
     titulo=request.GET["titulo"]
     if titulo!="":
@@ -54,19 +55,19 @@ def buscar(request):
     else:
         return render (request, "Appblog/busquedaTitulo.html", {"mensaje": "Favor ingresar un titulo para buscar"})
 
-
+@login_required
 def leerBlogs(request):
     blogs=Blog.objects.all()
     return render (request, "Appblog/leerBlogs.html", {"blogs":blogs})
 
-
+@login_required
 def eliminarBlog(request, id):
     blog= Blog.objects.get(id=id) #Trae los datos del model Blog que concuerda con el id. como es get es uno solo.
     blog.delete()
     blogs=Blog.objects.all()
     return render(request, "Appblog/leerBlogs.html", {"blogs":blogs, "mensaje": "Blog eliminado correctamente"})
 
-
+@login_required
 def editarBlog(request, id):
     blog=Blog.objects.get(id=id)
     if request.method=="POST":

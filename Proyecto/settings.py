@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Appblog',
     'ckeditor',
     'Appautenticacion',
+    'Appregistro',
 ]
 
 MIDDLEWARE = [
@@ -124,9 +125,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-LOGOUT_REDIRECT_URL='/AppCoder/'
+LOGOUT_REDIRECT_URL='/Appblog/'
 
-LOGIN_URL='/AppCoder/login/'
+LOGIN_URL='/Appblog/login/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

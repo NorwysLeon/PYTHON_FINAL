@@ -3,21 +3,17 @@
 
 {% block Titulos_iniciales %}
 <span class="site-heading-upper text-primary mb-3"></span>
-<span class="site-heading-lower">FORMULARIO DE ACCESO - NUEVOS USUARIOS</span>
+<span class="site-heading-lower">FORMULARIO DE REGISTRO</span>
 {% endblock %}
-
 
 {% block imagen %}
     <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'assets/img/registro.jpg' %}" alt="..." />
 {% endblock %}
 
-
 <h3>{{  mensaje }}</h3>
-
 {% block Titulos_texto %}
 <h6 class="section-heading mb-4">
-
-    <form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+    <form action="{% url 'registro' %}" method="POST"> {% csrf_token %}
 
        <table>
             {{ form.as_table }}

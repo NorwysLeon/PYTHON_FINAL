@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 
+
 class RegistroUsuarioForm(UserCreationForm): #Estos son los campos del admin usuario, username esta por deecto
     email= forms.EmailField(label="Email Usuario")
     password1=forms.CharField(label="Contraseña", widget=forms.PasswordInput)
@@ -16,5 +17,3 @@ class RegistroUsuarioForm(UserCreationForm): #Estos son los campos del admin usu
 
 
 
-    
-    
