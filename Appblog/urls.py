@@ -12,9 +12,9 @@ urlpatterns = [
     path('busquedaTitulo/', busquedaTitulo, name="busquedaTitulo"),
     path('buscar/', buscar, name="buscar"),
 
-    #path('leerBlogs/', leerBlogs, name="leerBlogs"),    
-    #path('eliminarBlog/<id>', eliminarBlog, name="eliminarBlog"),
-    #path('editarBlog/<id>', editarBlog, name="editarBlog"),
+    path('leerBlogs/', leerBlogs, name="leerBlogs"),    
+    path('eliminarBlog/<id>', eliminarBlog, name="eliminarBlog"),
+    path('editarBlog/<id>', editarBlog, name="editarBlog"),
 
     #path('blog/list/', BlogList.as_view(), name="blog_list"),
     #path('blog/<pk>', BlogDetalle.as_view(), name="blog_detalle"),
